@@ -1,0 +1,56 @@
+
+ CLERK AUTHENTICATION -  COU HNH XONG
+
+
+ Th   .env .env.example .env.local .git .gitignore CLERK_READY.md CLERK_SETUP.md CLERK_SETUP_SUCCESS.md QUICKSTART_CLERK.md README.md RESTART_INSTRUCTIONS.md eslint.config.js index.html node_modules package-lock.json package.json public src vite.config.js m Clerk keys vo file .env
+# ClerkProvider 
+# 
+c setup trong main.jsx
+# Protected routes 
+# 
+c setup trong App.jsx
+# Login/Signup pages 
+ snnnnn sng
+# UserButton 
+# 
+c thm vo Sidebar
+
+
+   
+
+BC 1: RESTART SERVER (B'EOF'T BUC!)
+   Trong terminal hin ti:
+   1. Nhn Ctrl + C ( stop server)
+   2. Chy: npm run dev
+
+BC 2: M TRNH DUYT
+   Truy c: http://localhost:5173/login
+
+#BC 3: NG NHP/NG K   - Click "Sign up"  to ti kho
+n mi
+#   - Hoccccccc ng nh nu 
+# c   ti kho
+n
+   - Sau khi ng nh, s vo Dashboard
+
+
+  QUAN TRNG   
+
+
+ PHI restart server  load big min miiii tr
+ Nu vn li, chy: rm -rf node_modules/.vite   
+ Sau    restart li server
+
+
+   
+
+ Clerk keys
+ ClerkProvider
+ Protected routes
+ Login page
+ Signup page
+ UserButton
+
+
+
+c thm chi tit: CLERK_READY.md
