@@ -40,9 +40,7 @@ const Dashboard = () => {
       );
 
       // Đếm đơn hàng theo trạng thái
-      const pendingOrders = orders.filter(
-        (o) => o.status === "Pending"
-      ).length;
+      const pendingOrders = orders.filter((o) => o.status === "Pending").length;
       const deliveredOrders = orders.filter(
         (o) => o.status === "Delivered"
       ).length;
@@ -99,7 +97,7 @@ const Dashboard = () => {
       <div className="dashboard-container">
         <div className="loading-state">
           <div className="spinner"></div>
-          <p>Đang tải dữ liệu...</p>
+          <p>Loading data ...</p>
         </div>
       </div>
     );
@@ -109,7 +107,7 @@ const Dashboard = () => {
     <div className="dashboard-container">
       <div className="dashboard-header">
         <h1>📊 Dashboard</h1>
-        <p className="dashboard-subtitle">Tổng quan hệ thống quản lý</p>
+        <p className="dashboard-subtitle">Management system overview</p>
       </div>
 
       {/* Stats Cards */}
@@ -117,7 +115,7 @@ const Dashboard = () => {
         <div className="stat-card primary">
           <div className="stat-icon">💰</div>
           <div className="stat-content">
-            <h3>Tổng doanh thu</h3>
+            <h3>Total revenue</h3>
             <p className="stat-value">
               {stats.totalRevenue.toLocaleString("vi-VN")}₫
             </p>
@@ -127,7 +125,7 @@ const Dashboard = () => {
         <div className="stat-card success">
           <div className="stat-icon">📦</div>
           <div className="stat-content">
-            <h3>Tổng đơn hàng</h3>
+            <h3>Total order</h3>
             <p className="stat-value">{stats.totalOrders}</p>
           </div>
         </div>
@@ -135,7 +133,7 @@ const Dashboard = () => {
         <div className="stat-card warning">
           <div className="stat-icon">⏳</div>
           <div className="stat-content">
-            <h3>Đơn chờ xử lý</h3>
+            <h3>Application pending</h3>
             <p className="stat-value">{stats.pendingOrders}</p>
           </div>
         </div>
@@ -143,7 +141,7 @@ const Dashboard = () => {
         <div className="stat-card info">
           <div className="stat-icon">✅</div>
           <div className="stat-content">
-            <h3>Đơn hoàn thành</h3>
+            <h3>Application completed</h3>
             <p className="stat-value">{stats.deliveredOrders}</p>
           </div>
         </div>
@@ -151,7 +149,7 @@ const Dashboard = () => {
         <div className="stat-card secondary">
           <div className="stat-icon">🍽️</div>
           <div className="stat-content">
-            <h3>Sản phẩm</h3>
+            <h3>Product</h3>
             <p className="stat-value">{stats.totalProducts}</p>
           </div>
         </div>
@@ -159,7 +157,7 @@ const Dashboard = () => {
         <div className="stat-card accent">
           <div className="stat-icon">🪑</div>
           <div className="stat-content">
-            <h3>Số bàn</h3>
+            <h3>Number of tables</h3>
             <p className="stat-value">{stats.totalTables}</p>
           </div>
         </div>
@@ -170,7 +168,7 @@ const Dashboard = () => {
         {/* Recent Orders */}
         <div className="dashboard-card">
           <div className="card-header">
-            <h2>📋 Đơn hàng gần đây</h2>
+            <h2>📋 Recent orders</h2>
           </div>
           <div className="card-body">
             {recentOrders.length > 0 ? (
@@ -178,8 +176,10 @@ const Dashboard = () => {
                 {recentOrders.map((order) => (
                   <div key={order.id} className="order-item">
                     <div className="order-info">
-                      <span className="order-id">#{order.id}</span>
-                      <span className="order-table">Bàn {order.table?.id}</span>
+                      <span className="order-id">{order.id}</span>
+                      <span className="order-table">
+                        Table {order.table?.id}
+                      </span>
                       <span
                         className={`order-status status-${order.status?.toLowerCase()}`}
                       >
@@ -204,7 +204,7 @@ const Dashboard = () => {
               </div>
             ) : (
               <div className="empty-state">
-                <p>Chưa có đơn hàng nào</p>
+                <p>No orders yet</p>
               </div>
             )}
           </div>
@@ -213,22 +213,22 @@ const Dashboard = () => {
         {/* Top Products */}
         <div className="dashboard-card">
           <div className="card-header">
-            <h2>🔥 Sản phẩm bán chạy</h2>
+            <h2>🔥 Best selling product</h2>
           </div>
           <div className="card-body">
             {topProducts.length > 0 ? (
               <div className="products-list">
                 {topProducts.map((item, index) => (
                   <div key={item.product.id} className="product-item">
-                    <div className="product-rank">#{index + 1}</div>
+                    <div className="product-rank">{index + 1}</div>
                     <div className="product-info">
                       <h4>{item.product.name}</h4>
                       <p className="product-stats">
                         <span className="stat-quantity">
-                          Đã bán: {item.quantity}
+                          Sold: {item.quantity}
                         </span>
                         <span className="stat-revenue">
-                          Doanh thu: {item.revenue.toLocaleString("vi-VN")}₫
+                          Revenue: {item.revenue.toLocaleString("vi-VN")}₫
                         </span>
                       </p>
                     </div>
@@ -237,7 +237,7 @@ const Dashboard = () => {
               </div>
             ) : (
               <div className="empty-state">
-                <p>Chưa có dữ liệu bán hàng</p>
+                <p>No sales data yet</p>
               </div>
             )}
           </div>
@@ -248,4 +248,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
